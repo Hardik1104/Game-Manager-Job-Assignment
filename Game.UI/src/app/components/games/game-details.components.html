@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-8"><h2>{{ id ? 'Edit Game' : 'Add Game' }}</h2></div>
+        <div class="col-4 " >
+            <div class="d-flex justify-content-end"> <button class="btn btn-sm btn-danger" *ngIf="id>0" (click)="deleteGame(id)" title="Delete"><i class="bi bi-trash3"></i></button></div>
+        </div>
+    </div>
+  
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" formControlName="title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea formControlName="description" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Genres</label>
+      <input type="text" formControlName="genres" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tags</label>
+      <input type="text" formControlName="tags" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Rating (0–10)</label>
+      <input type="number" formControlName="rating" class="form-control" min="0" max="10" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Launch Date</label>
+      <input type="date" formControlName="launchDate" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success me-2" [disabled]="form.invalid">
+      {{ id && id > 0 ? 'Update' : 'Add' }}
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+  </form>
+</div>

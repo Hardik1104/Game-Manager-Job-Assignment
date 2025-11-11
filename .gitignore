@@ -1,0 +1,15 @@
+# Angular
+node_modules/
+dist/
+.angular/
+npm-debug.log
+package-lock.json
+
+# ASP.NET Core
+bin/
+obj/
+*.user
+*.vs/
+*.vscode/
+*.db
+appsettings.Development.json

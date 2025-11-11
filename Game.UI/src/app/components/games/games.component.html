@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>🎮 Game List</h2>
+  <button class="btn btn-primary mb-3" (click)="editGame(-1)">Add New Game</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Launch Date</th>
+        <th>Last Modified On(UTC)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of games">
+        <td>{{ game.id }}</td>
+        <td>{{ game.title }}</td>
+        <td>{{ game.genres }}</td>
+        <td>{{ game.launchDate | date }}</td>
+        <td>{{ game.modifiedOn | date:'short' }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="editGame(game.id!)" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-fill"></i></button>
+          <button class="btn btn-sm btn-danger" (click)="deleteGame(game.id!)" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash3"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

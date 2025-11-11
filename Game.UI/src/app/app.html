@@ -1,0 +1,33 @@
+<!-- src/app/app.component.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">🎮 Game Manager</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/games" routerLinkActive="active">Games</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main page content -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Optional footer -->
+<footer class="text-center text-muted mt-5 mb-3">
+  <small>© {{ currentYear }} Game Manager App</small>
+</footer>
